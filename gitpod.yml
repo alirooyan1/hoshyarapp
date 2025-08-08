@@ -1,0 +1,20 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - name: Setup Flutter
+    init: |
+      git config --global --add safe.directory /workspace/hoshyarapp
+      flutter doctor
+      flutter pub get
+    command: |
+      echo "✅ محیط آماده شد! برای بیلد: flutter build apk"
+
+ports:
+  - port: 8080
+    onOpen: ignore
+
+vscode:
+  extensions:
+    - Dart-Code.flutter
+    - Dart-Code.dart-code
